@@ -1,8 +1,10 @@
 from MovieManager import MovieManager
+from Movie import Movie
 
-
-def main():
+def Main():
     manager = MovieManager()
+    movie = Movie()
+
     while True:
         print("1. Add Movie")
         print("2. Search Movie")
@@ -81,4 +83,4 @@ def main():
             print("Invalid choice. Please try again.")
     
 if __name__ == "__main__":
-    main()   
+    Main()   
