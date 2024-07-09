@@ -1,5 +1,6 @@
 from MovieManager import MovieManager
 
+
 def main():
     manager = MovieManager()
     while True:
@@ -25,11 +26,16 @@ def main():
             duration = int(input("Duration: "))
             description = input("Description: ")
             movie = movie(title, director, genre, year, rating, duration, description)
-            MovieManager.add_movie(movie)
+            manager.add_movie(movie)
+        
+            #create a movie object
+            movie_obj = movie(title, director, genre, year, rating, duration, description)
+            manager.add_movie(movie_obj)  #add the movie to manager
 
         elif choice == '2':
+            #search movie
             title = input("Enter movie title to search: ")
-            movie = MovieManager.find_movie(title)
+            movie = manager.find_movie(title)
             if movie:
                 print(movie)
             else:
@@ -41,10 +47,10 @@ def main():
 
         elif choice == '4':
             title = input("Enter movie title to delete: ")
-            MovieManager.remove_movie(title)
+            manager.remove_movie(title)
 
         elif choice == '5':
-            MovieManager.list_movies()
+            manager.list_movies()
 
         elif choice == '6':
             #code to mark as watched/unwatched
@@ -57,14 +63,14 @@ def main():
         elif choice == '8':
             filename = input("Enter filename to save: ")
             if filename.endswith('.json'):
-                MovieManager.save_json(filename)
+                manager.save_json(filename)
             else:
                 print("Invalid file format. Please use .json.")
 
         elif choice == '9':
             filename = input("Enter filename to load: ")
             if filename.endswith('.json'):
-                MovieManager.load_json(filename)
+                manager.load_json(filename)
             else:
                 print("Invalid file format. Please use .json.")
 
