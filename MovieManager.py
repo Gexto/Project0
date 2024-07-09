@@ -21,7 +21,8 @@ class MovieManager:
         movie = self.find_movie(title)
         if movie:
             self.movies.remove(movie)
-    
+            
+    #==============================================================================================
     def list_movies(self):
         for movie in self.movies:
             print(movie)
@@ -33,5 +34,16 @@ class MovieManager:
 
     def filter_movies(self, key, value):
         return [movie for movie in self.movies if getattr(movie, key).lower() == value.lower()]
+    
+    #==============================================================================================
+    def save_json(self, filename):
+        with open(filename, 'w') as file:
+            json.dump([movie.__dict__ for movie in self.movies], file)
 
+    def load_json(self, filename):
+        with open(filename, 'r') as file:
+            movies_data = json.load(file)
+            for movie_data in movies_data:
+                movie = movie(**movie_data)
+                self.add_movie(movie)
     
