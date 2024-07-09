@@ -30,3 +30,8 @@ class MovieManager:
         #sort movies based on the specified attribute.
         #the lambda function extracts the attribute value for sorting.
         self.movies.sort(key=lambda x: getattr(x, key))
+
+    def filter_movies(self, key, value):
+        return [movie for movie in self.movies if getattr(movie, key).lower() == value.lower()]
+
+    
