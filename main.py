@@ -1,9 +1,7 @@
-from movie import movie 
 from MovieManager import MovieManager
 
 def main():
-     manager = MovieManager()
-
+    manager = MovieManager()
     while True:
         print("1. Add Movie")
         print("2. Search Movie")
@@ -15,6 +13,66 @@ def main():
         print("8. Save to File")
         print("9. Load from File")
         print("10. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            title = input("Title: ")
+            director = input("Director: ")
+            genre = input("Genre: ")
+            year = int(input("Year: "))
+            rating = float(input("Rating: "))
+            duration = int(input("Duration: "))
+            description = input("Description: ")
+            movie = movie(title, director, genre, year, rating, duration, description)
+            MovieManager.add_movie(movie)
+
+        elif choice == '2':
+            title = input("Enter movie title to search: ")
+            movie = MovieManager.find_movie(title)
+            if movie:
+                print(movie)
+            else:
+                print("Movie not found.")
+
+        elif choice == '3':
+            #code to update movie information
+            pass
+
+        elif choice == '4':
+            title = input("Enter movie title to delete: ")
+            MovieManager.remove_movie(title)
+
+        elif choice == '5':
+            MovieManager.list_movies()
+
+        elif choice == '6':
+            #code to mark as watched/unwatched
+            pass
+
+        elif choice == '7':
+            #code to generate reports
+            pass
+
+        elif choice == '8':
+            filename = input("Enter filename to save: ")
+            if filename.endswith('.json'):
+                MovieManager.save_json(filename)
+            else:
+                print("Invalid file format. Please use .json.")
+
+        elif choice == '9':
+            filename = input("Enter filename to load: ")
+            if filename.endswith('.json'):
+                MovieManager.load_json(filename)
+            else:
+                print("Invalid file format. Please use .json.")
+
+        elif choice == '10':
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
     
 if __name__ == "__main__":
     main()   

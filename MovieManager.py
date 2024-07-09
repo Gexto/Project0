@@ -1,4 +1,3 @@
-import csv
 import json
 
 class MovieManager:
@@ -21,7 +20,7 @@ class MovieManager:
         movie = self.find_movie(title)
         if movie:
             self.movies.remove(movie)
-            
+
     #==============================================================================================
     def list_movies(self):
         for movie in self.movies:
