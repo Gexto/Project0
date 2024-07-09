@@ -8,3 +8,12 @@ class movie:
         self.duration = duration
         self.description = description
         self.watched = False
+
+    def mark_watched(self):
+        self.watched = True
+
+    def mark_unwatched(self):
+        self.watched = False
+
+    def __str__(self):
+        return f"{self.title} ({self.year}), Directed by {self.director}, Rating: {self.rating}"
