@@ -3,7 +3,6 @@ from Movie import Movie
 
 def Main():
     manager = MovieManager()
-    movie = Movie()
 
     while True:
         print("1. Add Movie")
@@ -27,12 +26,12 @@ def Main():
             rating = float(input("Rating: "))
             duration = int(input("Duration: "))
             description = input("Description: ")
-            movie = movie(title, director, genre, year, rating, duration, description)
+            movie = Movie(title, director, genre, year, rating, duration, description)
             manager.add_movie(movie)
         
-            #create a movie object
-            movie_obj = movie(title, director, genre, year, rating, duration, description)
-            manager.add_movie(movie_obj)  #add the movie to manager
+            #create a Movie object
+            new_movie = Movie(title, director, genre, year, rating, duration, description)
+            manager.add_movie(new_movie)
 
         elif choice == '2':
             #search movie

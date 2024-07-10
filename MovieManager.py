@@ -43,6 +43,6 @@ class MovieManager:
         with open(filename, 'r') as file:
             movies_data = json.load(file)
             for movie_data in movies_data:
-                movie = movie(**movie_data)
+                movie = movie(**movie_data) #create instance of Movie
                 self.add_movie(movie)
     
