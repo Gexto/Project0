@@ -1,5 +1,7 @@
 import json
 
+from Movie import Movie
+
 class MovieManager:
     def __init__(self, json_file='MovieList.json'):
         self.movies = []
@@ -42,9 +44,16 @@ class MovieManager:
             json.dump([movie.__dict__ for movie in self.movies], file)
 
     def load_json(self, filename):
-        with open(filename, 'r') as file:
-            movies_data = json.load(file)
-            for movie_data in movies_data:
-                movie = movie(**movie_data) #create instance of Movie
-                self.add_movie(movie)
+        try:
+            with open(filename, 'r') as file:
+                movies_data = json.load(file)
+                for movie_data in movies_data:
+                    movie = Movie(**movie_data)
+                    self.add_movie(movie)
+        #Handle exception
+        except FileNotFoundError:
+            print(f"Error: File '{filename}' not found.")
+            #optionally
+        except Exception as e:
+            print(f"Error loading JSON file: {e}")
     
