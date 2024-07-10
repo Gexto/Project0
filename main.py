@@ -3,6 +3,8 @@ from Movie import Movie
 
 def Main():
     manager = MovieManager()
+    #load movies from JSON file at the start
+    manager.load_json('MovieList.json')
 
     while True:
         print("1. Add Movie")
@@ -59,6 +61,7 @@ def Main():
 
         elif choice == '7':
             #code to generate reports
+            #
             pass
 
         elif choice == '8':

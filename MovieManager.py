@@ -1,8 +1,10 @@
 import json
 
 class MovieManager:
-    def __init__(self):
+    def __init__(self, json_file='MovieList.json'):
         self.movies = []
+        self.json_file = json_file
+        self.load_json(self.json_file)
 
     def add_movie(self, movie):
         self.movies.append(movie)
@@ -28,7 +30,7 @@ class MovieManager:
 
     def sort_movies(self, key):
         #sort movies based on the specified attribute.
-        #the lambda function extracts the attribute value for sorting.
+        #the lambda function extrats the attribute value for sorting.
         self.movies.sort(key=lambda x: getattr(x, key))
 
     def filter_movies(self, key, value):
