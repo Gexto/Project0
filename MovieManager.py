@@ -32,10 +32,10 @@ class MovieManager:
             print("No movies found in self.movies.")
         else:
             for movie in self.movies:
-                if isinstance(movie, Movie):  # Optional: Type checking for safety
                     print(movie.title)
-                else:
-                    print(f"Unexpected object found: {movie}")
+
+            """ else:
+                print(f"Unexpected object found: {movie}") """
 
     """ def sort_movies(self, key):
         #sort movies based on the specified attribute.
@@ -60,7 +60,6 @@ class MovieManager:
         #Handle exception
         except FileNotFoundError:
             print(f"Error: File '{filename}' not found.")
-            #optionally
         except Exception as e:
             print(f"Error loading JSON file: {e}")
     

@@ -3,9 +3,7 @@ from Movie import Movie
 
 def Main():
     manager = MovieManager()
-    #load movies from JSON file at the start
-    manager.load_json('C:/Users/CEGET/OneDrive/Desktop/PythonWork/Project0/MovieList.json')
-
+   
     while True:
         print("1. Add Movie")
         print("2. Search Movie")
@@ -15,8 +13,7 @@ def Main():
         #print("6. Mark as Watched/Unwatched")
         #print("7. Generate Reports")
         print("8. Save to File")
-        print("9. Load from File")
-        print("10. Exit")
+        print("9. Exit")
 
         choice = input("Enter your choice: ")
 
@@ -28,11 +25,8 @@ def Main():
             rating = float(input("Rating: "))
             duration = int(input("Duration: "))
             description = input("Description: ")
-        
-            #create a Movie object
-            new_movie = Movie(title, director, genre, year, rating, duration, description)
-            manager.add_movie(new_movie)
-
+            
+        #=================================================================================================
         elif choice == '2':
             #search movie
             title = input("Enter movie title to search: ")
@@ -72,13 +66,6 @@ def Main():
                 print("Invalid file format. Please use .json.")
 
         elif choice == '9':
-            filename = input("Enter filename to load: ")
-            if filename.endswith('.json'):
-                manager.load_json(filename)
-            else:
-                print("Invalid file format. Please use .json.")
-
-        elif choice == '10':
             break
 
         else:
@@ -86,3 +73,5 @@ def Main():
     
 if __name__ == "__main__":
     Main()   
+
+#manager.load_json('C:/Users/CEGET/OneDrive/Desktop/PythonWork/Project0/MovieList.json')
