@@ -4,7 +4,7 @@ from Movie import Movie
 def Main():
     manager = MovieManager()
     #load movies from JSON file at the start
-    manager.load_json('MovieList.json')
+    manager.load_json('C:/Users/CEGET/OneDrive/Desktop/PythonWork/Project0/MovieList.json')
 
     while True:
         print("1. Add Movie")
@@ -12,8 +12,8 @@ def Main():
         print("3. Update Movie")
         print("4. Delete Movie")
         print("5. List All Movies")
-        print("6. Mark as Watched/Unwatched")
-        print("7. Generate Reports")
+        #print("6. Mark as Watched/Unwatched")
+        #print("7. Generate Reports")
         print("8. Save to File")
         print("9. Load from File")
         print("10. Exit")
@@ -47,23 +47,25 @@ def Main():
         elif choice == '3':
             #code to update movie information
             pass
-
+        
+        #Delete movie
         elif choice == '4':
             title = input("Enter movie title to delete: ")
             manager.remove_movie(title)
 
+        #List movies
         elif choice == '5':
-            manager.list_movies()
-
-        elif choice == '6':
+             manager.list_movies()
+             
+             """elif choice == '6':
             #code to mark as watched/unwatched
-            pass
+            pass 
 
-        elif choice == '7':
-            #code to generate reports
-            #
-            pass
-
+            elif choice == '7':
+                #code to generate reports
+                #
+                pass 
+            """  
         elif choice == '8':
             filename = input("Enter filename to save: ")
             if filename.endswith('.json'):

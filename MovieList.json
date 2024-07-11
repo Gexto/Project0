@@ -18,5 +18,36 @@
         "duration": 136,
         "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.",
         "watched": true
+    },
+    {
+        "title": "Interstellar",
+        "director": "Christopher Nolan",
+        "genre": "Sci-Fi",
+        "year": 2014,
+        "rating": 8.6,
+        "duration": 169,
+        "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        "watched": true
+    },
+    {
+        "title": "Pulp Fiction",
+        "director": "Quentin Tarantino",
+        "genre": "Crime",
+        "year": 1994,
+        "rating": 8.9,
+        "duration": 154,
+        "description": "The lives of two mob hitmen, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+        "watched": false
+    },
+    {
+        "title": "Tron",
+        "director": "Steven Lisberger",
+        "genre": "Sci-Fi",
+        "year": 1982,
+        "rating": 6.8,
+        "duration": 96,
+        "description": "A computer programmer is transported into a computer mainframe and has to escape!",
+        "watched": false
     }
+    
 ]

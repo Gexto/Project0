@@ -3,7 +3,7 @@ import json
 from Movie import Movie
 
 class MovieManager:
-    def __init__(self, json_file='MovieList.json'):
+    def __init__(self, json_file='C:/Users/CEGET/OneDrive/Desktop/PythonWork/Project0/MovieList.json'):
         self.movies = []
         self.json_file = json_file
         self.load_json(self.json_file)
@@ -27,16 +27,23 @@ class MovieManager:
 
     #==============================================================================================
     def list_movies(self):
-        for movie in self.movies:
-            print(movie)
+        print("Listing all movie titles:")
+        if not self.movies:
+            print("No movies found in self.movies.")
+        else:
+            for movie in self.movies:
+                if isinstance(movie, Movie):  # Optional: Type checking for safety
+                    print(movie.title)
+                else:
+                    print(f"Unexpected object found: {movie}")
 
-    def sort_movies(self, key):
+    """ def sort_movies(self, key):
         #sort movies based on the specified attribute.
         #the lambda function extrats the attribute value for sorting.
         self.movies.sort(key=lambda x: getattr(x, key))
 
     def filter_movies(self, key, value):
-        return [movie for movie in self.movies if getattr(movie, key).lower() == value.lower()]
+        return [movie for movie in self.movies if getattr(movie, key).lower() == value.lower()] """
     
     #==============================================================================================
     def save_json(self, filename):
