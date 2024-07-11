@@ -28,8 +28,6 @@ def Main():
             rating = float(input("Rating: "))
             duration = int(input("Duration: "))
             description = input("Description: ")
-            movie = Movie(title, director, genre, year, rating, duration, description)
-            manager.add_movie(movie)
         
             #create a Movie object
             new_movie = Movie(title, director, genre, year, rating, duration, description)
