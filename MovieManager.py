@@ -27,7 +27,7 @@ class MovieManager:
 
     #==============================================================================================
     def list_movies(self):
-        print("Listing all movie titles:")
+        print("Listing all movie titles:\n")
         if not self.movies:
             print("No movies found in self.movies.")
         else:

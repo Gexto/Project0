@@ -48,6 +48,56 @@
         "duration": 96,
         "description": "A computer programmer is transported into a computer mainframe and has to escape!",
         "watched": false
+    },
+    {
+        "title": "Avatar",
+        "director": "James Cameron",
+        "genre": "Sci-Fi",
+        "year": 2009,
+        "rating": 7.8,
+        "duration": 162,
+        "description": "A paraplegic Marine is dispatched to the moon Pandora on a unique mission.",
+        "watched": false
+    },
+    {
+        "title": "Jaws",
+        "director": "Steven Spielberg",
+        "genre": "Thriller",
+        "year": 1975,
+        "rating": 8.0,
+        "duration": 124,
+        "description": "A giant shark terrorizes a small beach town.",
+        "watched": true
+    },
+    {
+        "title": "Rocky",
+        "director": "John G. Avildsen",
+        "genre": "Drama",
+        "year": 1976,
+        "rating": 8.1,
+        "duration": 120,
+        "description": "A small-time boxer gets a chance to fight a world heavyweight champion.",
+        "watched": true
+    },
+    {
+        "title": "Shrek",
+        "director": "Andrew Adamson, Vicky Jenson",
+        "genre": "Animation",
+        "year": 2001,
+        "rating": 7.9,
+        "duration": 90,
+        "description": "An ogre's quiet life is disrupted by a group of fairy tale creatures.",
+        "watched": false
+    },
+    {
+        "title": "Aliens",
+        "director": "James Cameron",
+        "genre": "Sci-Fi",
+        "year": 1986,
+        "rating": 8.4,
+        "duration": 137,
+        "description": "Ellen Ripley returns to the planet where she encountered the hostile Alien creature.",
+        "watched": false
     }
     
 ]

@@ -3,17 +3,19 @@ from Movie import Movie
 
 def Main():
     manager = MovieManager()
+    #manager.load_json('C:/Users/CEGET/OneDrive/Desktop/PythonWork/Project0/MovieList.json')
    
     while True:
-        print("1. Add Movie")
+        print("\n1. Add Movie")
         print("2. Search Movie")
-        print("3. Update Movie")
+        #print("3. Update Movie")
         print("4. Delete Movie")
         print("5. List All Movies")
         #print("6. Mark as Watched/Unwatched")
         #print("7. Generate Reports")
         print("8. Save to File")
         print("9. Exit")
+        
 
         choice = input("Enter your choice: ")
 
@@ -25,6 +27,9 @@ def Main():
             rating = float(input("Rating: "))
             duration = int(input("Duration: "))
             description = input("Description: ")
+            movie = Movie(title, director, genre, year, rating, duration, description)
+            manager.add_movie(movie)
+            print("Movie added successfully.\n")
             
         #=================================================================================================
         elif choice == '2':
@@ -32,13 +37,13 @@ def Main():
             title = input("Enter movie title to search: ")
             movie = manager.find_movie(title)
             if movie:
-                print(movie)
+                print("\n", movie)
             else:
                 print("Movie not found.")
 
-        elif choice == '3':
-            #code to update movie information
-            pass
+            """ elif choice == '3':
+                #code to update movie information
+                pass """
         
         #Delete movie
         elif choice == '4':
@@ -73,5 +78,3 @@ def Main():
     
 if __name__ == "__main__":
     Main()   
-
-#manager.load_json('C:/Users/CEGET/OneDrive/Desktop/PythonWork/Project0/MovieList.json')
